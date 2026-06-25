@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e1016" />
+
+  <title>Ta Vie en Semaines — Visualise ta vie, une semaine à la fois</title>
+  <meta name="description" content="Combien de semaines as-tu déjà vécues ? Combien t'en reste-t-il ? Visualise toute ta vie sur une seule grille, gratuitement et sans inscription. Un outil simple pour reprendre le contrôle de ton temps." />
+  <meta name="keywords" content="ta vie en semaines, calendrier de vie, semaines de vie, combien de semaines dans une vie, espérance de vie, temps qu'il me reste, memento mori, visualiser sa vie" />
+  <meta name="author" content="Ta Vie en Semaines" />
+  <link rel="canonical" href="https://itachiuchiha976.github.io/ta-vie-en-semaines/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Ta Vie en Semaines" />
+  <meta property="og:title" content="Ta Vie en Semaines — combien t'en reste-t-il ?" />
+  <meta property="og:description" content="Visualise toute ta vie sur une seule grille. Chaque case = une semaine. Gratuit, sans inscription, 100% privé." />
+  <meta property="og:url" content="https://itachiuchiha976.github.io/ta-vie-en-semaines/" />
+  <meta property="og:image" content="https://itachiuchiha976.github.io/ta-vie-en-semaines/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ta Vie en Semaines — combien t'en reste-t-il ?" />
+  <meta name="twitter:description" content="Visualise toute ta vie sur une seule grille. Chaque case = une semaine. Gratuit, sans inscription, 100% privé." />
+  <meta name="twitter:image" content="https://itachiuchiha976.github.io/ta-vie-en-semaines/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- JSON-LD : WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Ta Vie en Semaines",
+    "url": "https://itachiuchiha976.github.io/ta-vie-en-semaines/",
+    "description": "Outil gratuit pour visualiser toute sa vie semaine par semaine sur une seule grille, et voir combien de temps il reste.",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "All",
+    "inLanguage": "fr-FR",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+  <!-- JSON-LD : FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Combien de semaines y a-t-il dans une vie ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une vie de 80 ans compte environ 4 174 semaines, et une vie de 90 ans environ 4 696 semaines (52,18 semaines par an). En France, l'espérance de vie à la naissance est de 80,0 ans pour les hommes et 85,6 ans pour les femmes (INSEE, 2024)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mes données sont-elles enregistrées ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Tout le calcul se fait dans ton navigateur. Ta date de naissance n'est jamais envoyée à un serveur."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!--
+    ============================================================
+    EMPLACEMENT PUBLICITÉ (AdSense) — à activer après acceptation
+    Remplacer ca-pub-XXXX par l'ID réel, puis décommenter :
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    ============================================================
+  -->
+</head>
+<body>
+  <a class="skip-link" href="#outil">Aller à l'outil</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Ta Vie en Semaines, accueil">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Ta Vie en <strong>Semaines</strong></span>
+      </a>
+      <nav class="header-nav">
+        <a href="#outil">L'outil</a>
+        <a href="#comprendre">Comprendre</a>
+        <a href="#ressources">Ressources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Gratuit · Sans inscription · 100% privé</p>
+        <h1>Ta vie entière&nbsp;tient sur<br /><span class="grad">une seule grille.</span></h1>
+        <p class="lede">
+          Chaque case ci-dessous est <strong>une semaine</strong> de ton existence.
+          Entre ta date de naissance et découvre combien tu en as déjà vécues —
+          et combien il t'en reste. Une claque salutaire pour arrêter de gaspiller ton temps.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#outil">Visualiser ma vie →</a>
+          <span class="hero-note">Aucune donnée ne quitte ton navigateur.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTIL -->
+    <section id="outil" class="tool">
+      <div class="wrap">
+        <div class="tool-card">
+          <form id="life-form" class="controls" autocomplete="off" novalidate>
+            <div class="field">
+              <label for="birthdate">Ta date de naissance</label>
+              <input type="date" id="birthdate" name="birthdate" required />
+            </div>
+
+            <div class="field">
+              <label for="sex">Espérance de vie de référence</label>
+              <select id="sex" name="sex">
+                <option value="female">Femme — 85,6 ans (INSEE 2024)</option>
+                <option value="male">Homme — 80,0 ans (INSEE 2024)</option>
+                <option value="custom">Je choisis moi-même</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="target-age">Âge cible (la grille s'arrête là)</label>
+              <div class="range-row">
+                <input type="range" id="target-age" name="target-age" min="40" max="110" step="1" value="86" />
+                <output id="target-age-out" for="target-age">86 ans</output>
+              </div>
+            </div>
+
+            <div class="field field-toggle">
+              <span class="toggle-label">Affichage</span>
+              <div class="seg" role="group" aria-label="Mode d'affichage">
+                <button type="button" class="seg-btn is-active" data-mode="weeks">Semaines</button>
+                <button type="button" class="seg-btn" data-mode="months">Mois</button>
+                <button type="button" class="seg-btn" data-mode="years">Années</button>
+              </div>
+            </div>
+
+            <div class="field field-checkbox">
+              <label class="checkbox">
+                <input type="checkbox" id="show-phases" checked />
+                <span>Colorer les grandes étapes de la vie</span>
+              </label>
+            </div>
+          </form>
+
+          <!-- STATS -->
+          <div id="stats" class="stats" aria-live="polite" hidden>
+            <div class="stat">
+              <span class="stat-num" id="stat-lived">—</span>
+              <span class="stat-label">semaines vécues</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" id="stat-left">—</span>
+              <span class="stat-label">semaines restantes</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" id="stat-pct">—</span>
+              <span class="stat-label">de ta vie écoulée</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" id="stat-summers">—</span>
+              <span class="stat-label">étés restants</span>
+            </div>
+          </div>
+
+          <p id="message" class="message" hidden></p>
+
+          <!-- LEGENDE -->
+          <div id="legend" class="legend" hidden></div>
+
+          <!-- GRILLE -->
+          <div id="grid-frame" class="grid-frame" hidden>
+            <div class="grid-axis">
+              <span>← chaque ligne = 1 an de ta vie</span>
+              <span id="grid-cols-label"></span>
+            </div>
+            <div id="grid" class="grid" role="img" aria-label="Grille de ta vie, une case par semaine"></div>
+          </div>
+
+          <!-- EMPTY STATE -->
+          <div id="empty" class="empty">
+            <div class="empty-icon" aria-hidden="true">⌛</div>
+            <p>Entre ta date de naissance ci-dessus pour faire apparaître ta vie.</p>
+          </div>
+
+          <!-- ACTIONS -->
+          <div id="actions" class="tool-actions" hidden>
+            <button type="button" id="btn-image" class="btn btn-ghost">⬇️ Télécharger mon image</button>
+            <button type="button" id="btn-share" class="btn btn-ghost">🔗 Partager / copier le lien</button>
+            <span id="share-feedback" class="share-feedback" role="status"></span>
+          </div>
+        </div>
+
+        <p class="privacy-note">
+          🔒 <strong>Confidentialité totale.</strong> Ta date de naissance n'est ni envoyée ni enregistrée :
+          tout le calcul se passe dans ton navigateur et disparaît dès que tu fermes la page. Aucun serveur, aucun traceur.
+        </p>
+      </div>
+    </section>
+
+    <!-- FUNNEL / EMAIL -->
+    <section class="funnel">
+      <div class="wrap funnel-inner">
+        <div class="funnel-card funnel-yt">
+          <h2>Cette grille t'a secoué&nbsp;?</h2>
+          <p>
+            Chaque dimanche, une case de plus se remplit — que tu en aies fait quelque chose ou non.
+            La chaîne <strong>Mindset Brut</strong> existe pour transformer ce constat en énergie :
+            des vidéos courtes, sans bullshit, pour ne pas gaspiller les semaines qu'il te reste.
+          </p>
+          <a class="btn btn-primary" id="yt-cta" href="https://www.youtube.com/@mindsetbrutfr?sub_confirmation=1" target="_blank" rel="noopener">
+            ▶ S'abonner à Mindset Brut
+          </a>
+        </div>
+
+        <div class="funnel-card funnel-email">
+          <h2>De nouveaux outils arrivent</h2>
+          <p>Laisse ton email — je t'envoie les prochains outils gratuits (et rien d'autre).</p>
+          <form id="email-form" class="email-form">
+            <input type="email" id="email" placeholder="ton@email.fr" required aria-label="Ton adresse email" />
+            <button type="submit" class="btn btn-primary">Je veux les outils</button>
+          </form>
+          <p id="email-feedback" class="email-feedback" role="status"></p>
+          <p class="email-fineprint">Pas de spam. Désabonnement en un clic. <em>(Plus d'outils à venir.)</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPRENDRE -->
+    <section id="comprendre" class="explain">
+      <div class="wrap">
+        <h2 class="section-title">Pourquoi cette grille fait réfléchir</h2>
+        <div class="explain-grid">
+          <article class="explain-item">
+            <h3>Le temps devient concret</h3>
+            <p>
+              « 80 ans » reste abstrait. <strong>4 174 semaines</strong>, ça tient sur un écran de téléphone —
+              et soudain, le chiffre paraît bien petit. C'est exactement le but : rendre visible
+              ce qu'on ne regarde jamais en face.
+            </p>
+          </article>
+          <article class="explain-item">
+            <h3>Tu vois où tu en es</h3>
+            <p>
+              Les cases pleines, c'est déjà vécu. La case qui clignote, c'est <strong>cette semaine-ci</strong>.
+              Tout le reste est encore à écrire. La question n'est pas « combien de temps me reste-t-il ? »
+              mais « qu'est-ce que j'en fais ? ».
+            </p>
+          </article>
+          <article class="explain-item">
+            <h3>D'où viennent les chiffres</h3>
+            <p>
+              L'espérance de vie par défaut vient de l'<strong>INSEE (2024)</strong> :
+              80,0 ans pour les hommes, 85,6 ans pour les femmes. Ce ne sont que des moyennes
+              statistiques — pas une prédiction sur <em>ta</em> vie. Tu peux ajuster l'âge cible librement.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESSOURCES -->
+    <section id="ressources" class="resources">
+      <div class="wrap">
+        <h2 class="section-title">Pour aller plus loin</h2>
+        <p class="resources-intro">Trois lectures qui changent le rapport au temps. (Liens vers les ouvrages — ajout d'affiliation à venir.)</p>
+        <div class="resources-grid">
+          <a class="resource-card" href="https://www.youtube.com/@mindsetbrutfr" target="_blank" rel="noopener">
+            <span class="resource-tag">Vidéo</span>
+            <h3>Mindset Brut</h3>
+            <p>La chaîne YouTube : des rappels courts pour ne pas laisser les semaines filer.</p>
+          </a>
+          <div class="resource-card resource-static">
+            <span class="resource-tag">Livre</span>
+            <h3>4 000 semaines — Oliver Burkeman</h3>
+            <p>Le manifeste sur la finitude du temps qui a inspiré cet outil. Gérer le temps en acceptant qu'on n'en a pas assez.</p>
+          </div>
+          <div class="resource-card resource-static">
+            <span class="resource-tag">Livre</span>
+            <h3>L'Effet Cumulé — Darren Hardy</h3>
+            <p>Pourquoi une petite action répétée chaque semaine bat toujours le grand geste qu'on remet à plus tard.</p>
+          </div>
+        </div>
+        <!-- Emplacement future affiliation / produit numérique -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-brand">Ta Vie en <strong>Semaines</strong></p>
+      <p class="footer-text">
+        Outil gratuit. Calcul 100% local, aucune donnée collectée.
+        Espérance de vie&nbsp;: <a href="https://www.insee.fr/fr/statistiques/2416631" target="_blank" rel="noopener">INSEE 2024</a>.
+      </p>
+      <p class="footer-text footer-disclaimer">
+        Les repères d'âge et de vie sont indicatifs. Cet outil sert à la réflexion, pas à prédire l'avenir.
+        Si ce miroir du temps te pèse trop, parles-en autour de toi&nbsp;: en France, le 3114 (gratuit, 24h/24) écoute.
+      </p>
+      <p class="footer-made">Fait avec ❤ pour ceux qui veulent que chaque semaine compte.</p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
