@@ -60,6 +60,8 @@
   var gridColsLabel = $("grid-cols-label");
   var emptyEl = $("empty");
   var actionsEl = $("actions");
+  var peakCtaEl = $("peak-cta");
+  var peakCtaText = $("peak-cta-text");
 
   var mode = "weeks";
 
@@ -128,10 +130,25 @@
     if (!d) {
       statsEl.hidden = true; messageEl.hidden = true; legendEl.hidden = true;
       gridFrame.hidden = true; actionsEl.hidden = true; emptyEl.style.display = "";
+      if (peakCtaEl) peakCtaEl.hidden = true;
       return;
     }
     emptyEl.style.display = "none";
     statsEl.hidden = false; actionsEl.hidden = false;
+
+    // CTA pic émotionnel (abonnement chaîne) — révélé une fois la grille calculée
+    if (peakCtaEl) {
+      peakCtaEl.hidden = d.future ? true : false;
+      if (!d.future && peakCtaText) {
+        if (d.weeksLeft < 2000) {
+          peakCtaEl.classList.add("is-urgent");
+          peakCtaText.textContent = "Il te reste moins de 2 000 semaines. Chacune compte vraiment — autant les passer à devenir qui tu veux être.";
+        } else {
+          peakCtaEl.classList.remove("is-urgent");
+          peakCtaText.textContent = "Tu viens de voir tes semaines. La vraie question, c'est ce que tu fais des prochaines.";
+        }
+      }
+    }
 
     // stats
     statLived.textContent = d.future ? "0" : fmt(d.weeksLived);
@@ -331,7 +348,7 @@
     el._t = setTimeout(function () { el.textContent = ""; }, 3500);
   }
 
-  // ---------- Email stub (localStorage) ----------
+  // ---------- Email (Web3Forms, AJAX) ----------
   var emailForm = $("email-form");
   emailForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -340,13 +357,32 @@
       feedback($("email-feedback"), "Entre une adresse email valide.");
       return;
     }
-    try {
-      var list = JSON.parse(localStorage.getItem("tvs_emails") || "[]");
-      list.push({ e: email, d: new Date().toISOString() });
-      localStorage.setItem("tvs_emails", JSON.stringify(list));
-    } catch (err) { /* localStorage indispo : on ignore */ }
-    $("email").value = "";
-    feedback($("email-feedback"), "C'est noté ✓ Tu recevras les prochains outils.");
+    var btn = emailForm.querySelector("button[type=submit]");
+    if (btn) { btn.disabled = true; }
+    feedback($("email-feedback"), "Envoi en cours…");
+
+    fetch(emailForm.action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(emailForm)
+    })
+      .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, body: j }; }); })
+      .then(function (r) {
+        if (r.ok && r.body && r.body.success) {
+          // succès : on cache le form et on affiche un message inline
+          emailForm.style.display = "none";
+          var fb = $("email-feedback");
+          fb.textContent = "Merci ! Tu es sur la liste. 🎉";
+          clearTimeout(fb._t);
+        } else {
+          if (btn) { btn.disabled = false; }
+          feedback($("email-feedback"), "Oups, un souci est survenu. Réessaie dans un instant.");
+        }
+      })
+      .catch(function () {
+        if (btn) { btn.disabled = false; }
+        feedback($("email-feedback"), "Connexion impossible. Vérifie ta connexion et réessaie.");
+      });
   });
 
   // ---------- Sync curseur / sexe ----------

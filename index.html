@@ -216,6 +216,14 @@
             <button type="button" id="btn-share" class="btn btn-ghost">🔗 Partager / copier le lien</button>
             <span id="share-feedback" class="share-feedback" role="status"></span>
           </div>
+
+          <!-- CTA PIC ÉMOTIONNEL : abonnement chaîne -->
+          <div id="peak-cta" class="peak-cta" hidden>
+            <p id="peak-cta-text" class="peak-cta-text">Tu viens de voir tes semaines. La vraie question, c'est ce que tu fais des prochaines.</p>
+            <a class="btn btn-primary" id="peak-yt-cta" href="https://www.youtube.com/@mindsetbrutfr?sub_confirmation=1" target="_blank" rel="noopener">
+              ▶ S'abonner à Mindset Brut — ne plus gaspiller tes semaines
+            </a>
+          </div>
         </div>
 
         <p class="privacy-note">
@@ -241,14 +249,18 @@
         </div>
 
         <div class="funnel-card funnel-email">
-          <h2>De nouveaux outils arrivent</h2>
-          <p>Laisse ton email — je t'envoie les prochains outils gratuits (et rien d'autre).</p>
-          <form id="email-form" class="email-form">
-            <input type="email" id="email" placeholder="ton@email.fr" required aria-label="Ton adresse email" />
-            <button type="submit" class="btn btn-primary">Je veux les outils</button>
+          <h2>Ne laisse pas les semaines qui restent ressembler à celles qui sont passées.</h2>
+          <p>Je construis des outils gratuits pour reprendre le contrôle de son temps — calendrier, habitudes, productivité. Laisse ton email pour les recevoir en premier.</p>
+          <form id="email-form" class="email-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d97a8c73-b827-48bb-b437-e053a73fdb7e" />
+            <input type="hidden" name="subject" value="Ta Vie en Semaines — nouveau lead" />
+            <input type="hidden" name="from_name" value="Ta Vie en Semaines" />
+            <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off" />
+            <input type="email" id="email" name="email" placeholder="ton@email.fr" required aria-label="Ton adresse email" />
+            <button type="submit" class="btn btn-primary">Envoyer — je veux les outils</button>
           </form>
           <p id="email-feedback" class="email-feedback" role="status"></p>
-          <p class="email-fineprint">Pas de spam. Désabonnement en un clic. <em>(Plus d'outils à venir.)</em></p>
+          <p class="email-fineprint">Pas de spam. Désabonnement en un clic. Conformément au RGPD, tu peux demander la suppression de tes données à tout moment. Pas de revente.</p>
         </div>
       </div>
     </section>
@@ -290,12 +302,17 @@
     <section id="ressources" class="resources">
       <div class="wrap">
         <h2 class="section-title">Pour aller plus loin</h2>
-        <p class="resources-intro">Trois lectures qui changent le rapport au temps. (Liens vers les ouvrages — ajout d'affiliation à venir.)</p>
+        <p class="resources-intro">Des ressources pour transformer ce choc en action — choisies pour leur impact réel.</p>
         <div class="resources-grid">
           <a class="resource-card" href="https://www.youtube.com/@mindsetbrutfr" target="_blank" rel="noopener">
             <span class="resource-tag">Vidéo</span>
             <h3>Mindset Brut</h3>
             <p>La chaîne YouTube : des rappels courts pour ne pas laisser les semaines filer.</p>
+          </a>
+          <a class="resource-card" href="https://itachiuchiha976.github.io/comparateur-ia" target="_blank" rel="noopener">
+            <span class="resource-tag">Outil gratuit</span>
+            <h3>Comparateur d'outils IA</h3>
+            <p>Pour optimiser chaque semaine qui reste : compare les meilleurs outils IA et trouve ceux qui font vraiment gagner du temps.</p>
           </a>
           <div class="resource-card resource-static">
             <span class="resource-tag">Livre</span>
@@ -308,7 +325,6 @@
             <p>Pourquoi une petite action répétée chaque semaine bat toujours le grand geste qu'on remet à plus tard.</p>
           </div>
         </div>
-        <!-- Emplacement future affiliation / produit numérique -->
       </div>
     </section>
   </main>
@@ -317,7 +333,8 @@
     <div class="wrap footer-inner">
       <p class="footer-brand">Ta Vie en <strong>Semaines</strong></p>
       <p class="footer-text">
-        Outil gratuit. Calcul 100% local, aucune donnée collectée.
+        Outil gratuit. Le calcul est 100% local&nbsp;: ta date de naissance n'est jamais envoyée ni enregistrée.
+        (Seul l'email, si tu le laisses volontairement, sert à t'envoyer les prochains outils.)
         Espérance de vie&nbsp;: <a href="https://www.insee.fr/fr/statistiques/2416631" target="_blank" rel="noopener">INSEE 2024</a>.
       </p>
       <p class="footer-text footer-disclaimer">
