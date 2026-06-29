@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan 30 jours pour reprendre le contrôle | Ta Vie en Semaines</title>
+  <meta name="description" content="Un plan de 30 jours concret et sobre pour reprendre le contrôle de ton temps. Routines quotidiennes, révisions hebdomadaires et habitudes durables." />
+  <meta name="robots" content="noindex, follow" />
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --surface: #ffffff;
+      --primary: #111827;
+      --accent: #6366f1;
+      --accent-light: #eef2ff;
+      --success: #059669;
+      --border: #e5e7eb;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --radius: 10px;
+      --font: 'Segoe UI', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.65; }
+
+    header { background: #111827; padding: 14px 20px; }
+    .header-inner { max-width: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .brand { color: #fff; font-weight: 700; font-size: 1rem; text-decoration: none; }
+    .header-back { color: rgba(255,255,255,.8); font-size: .88rem; text-decoration: none; }
+    .header-back:hover { color: #fff; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 28px 16px 48px; }
+
+    .intro { background: var(--accent-light); border: 1px solid #c7d2fe; border-radius: var(--radius); padding: 20px; margin-bottom: 32px; }
+    .intro h1 { font-size: 1.3rem; color: var(--accent); margin-bottom: 8px; }
+    .intro p { font-size: .93rem; color: #374151; }
+    .intro .badge { display: inline-block; background: var(--success); color: #fff; border-radius: 20px; font-size: .78rem; font-weight: 600; padding: 3px 12px; margin-top: 10px; }
+
+    /* Daily routine box */
+    .routine-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 24px; }
+    .routine-box h2 { font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .routine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .routine-card { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+    .routine-card-title { font-weight: 700; font-size: .88rem; color: var(--primary); margin-bottom: 6px; }
+    .routine-card ul { padding-left: 16px; font-size: .88rem; color: #374151; }
+    .routine-card ul li { margin-bottom: 4px; }
+    @media (max-width: 480px) { .routine-grid { grid-template-columns: 1fr; } }
+
+    /* Week blocks */
+    .week { margin-bottom: 24px; }
+    .week-header { background: var(--primary); color: #fff; border-radius: var(--radius) var(--radius) 0 0; padding: 10px 16px; font-weight: 700; font-size: .95rem; display: flex; align-items: center; gap: 10px; }
+    .week-body { background: var(--surface); border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--radius) var(--radius); }
+    .day-block { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; gap: 14px; align-items: flex-start; }
+    .day-block:last-child { border-bottom: none; }
+    .day-label { background: var(--accent-light); color: var(--accent); border-radius: 6px; padding: 3px 8px; font-size: .78rem; font-weight: 700; min-width: 60px; text-align: center; flex-shrink: 0; }
+    .day-content { font-size: .9rem; }
+    .day-content strong { color: var(--primary); }
+    .day-content p { color: #4b5563; margin-top: 2px; font-size: .86rem; }
+
+    /* Rules */
+    .rules { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 24px; }
+    .rules h2 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+    .rule { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .rule:last-child { border-bottom: none; }
+    .rule-num { background: var(--accent); color: #fff; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .rule-text { font-size: .9rem; color: #374151; }
+    .rule-text strong { color: var(--primary); }
+
+    /* Disclaimer */
+    .disclaimer { background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius); padding: 12px 16px; font-size: .85rem; color: #78350f; margin-top: 24px; }
+
+    footer { text-align: center; padding: 24px 16px; font-size: .82rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media print { header, footer, .disclaimer { display: none; } main { padding: 0; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="brand">Ta Vie en Semaines</a>
+    <a href="../index.html" class="header-back">← Retour à l'outil</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="intro">
+    <h1>Plan 30 jours pour reprendre le contrôle</h1>
+    <p>Un cadre concret, semaine par semaine. Pas de promesse magique : juste des habitudes testées et des gestes simples qui, répétés, produisent une vraie différence. Ce plan demande environ 20 minutes par jour.</p>
+    <span class="badge">Accès immédiat · Gratuit</span>
+  </div>
+
+  <!-- Routine quotidienne -->
+  <div class="routine-box">
+    <h2>Routine quotidienne (à mettre en place dès le Jour 1)</h2>
+    <div class="routine-grid">
+      <div class="routine-card">
+        <div class="routine-card-title">Matin (5 min) avant d'ouvrir le téléphone</div>
+        <ul>
+          <li>Une intention du jour : qu'est-ce que je dois absolument faire ?</li>
+          <li>Écrire cette tâche prioritaire sur un papier ou dans un carnet</li>
+          <li>Ne pas consulter les réseaux sociaux avant d'avoir lancé cette tâche</li>
+        </ul>
+      </div>
+      <div class="routine-card">
+        <div class="routine-card-title">Soir (5 min) avant de dormir</div>
+        <ul>
+          <li>Trois choses concrètes accomplies aujourd'hui (même petites)</li>
+          <li>Une chose que je ferai différemment demain</li>
+          <li>Préparer la tâche prioritaire de demain à l'avance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Semaine 1 -->
+  <div class="week">
+    <div class="week-header"><span>Semaine 1</span> — Bilan et fondations (Jours 1-7)</div>
+    <div class="week-body">
+      <div class="day-block">
+        <div class="day-label">Jours 1-2</div>
+        <div class="day-content">
+          <strong>Audit de ton emploi du temps réel</strong>
+          <p>Pendant 2 jours, note ce que tu fais vraiment toutes les 2 heures. Sans jugement. Tu as besoin de voir la réalité avant de l'améliorer.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-label">Jours 3-4</div>
+        <div class="day-content">
+          <strong>Identifier 3 priorités pour les 30 jours</strong>
+          <p>Pas une liste de 20 choses. Trois objectifs concrets, mesurables, réalistes à l'échelle d'un mois. Écris-les sur papier et colle-les quelque part de visible.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-label">Jours 5-6</div>
+        <div class="day-content">
+          <strong>Mettre en place la routine matinale</strong>
+          <p>Applique la routine matin/soir pendant 2 jours de suite. L'objectif n'est pas la perfection, mais l'habitude de commencer.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-label">Jour 7</div>
+        <div class="day-content">
+          <strong>Première revue hebdomadaire (15 min)</strong>
+          <p>Qu'est-ce qui a marché cette semaine ? Qu'est-ce qui n'a pas marché ? Une chose à changer la semaine prochaine. Écris-le, même en 3 lignes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Semaine 2 -->
+  <div class="week">
+    <div class="week-header"><span>Semaine 2</span> — Habitudes essentielles (Jours 8-14)</div>
+    <div class="week-body">
+      <div class="day-block">
+        <div class="day-label">Jours 8-10</div>
+        <div class="day-content">
+          <strong>Une tâche prioritaire avant le téléphone</strong>
+          <p>Chaque matin pendant 3 jours : 30 minutes sur ta tâche la plus importante AVANT de regarder les notifications. Difficile les premiers jours, puis ça devient automatique.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-label">Jours 11-12</div>
+        <div class="day-content">
+          <strong>Couper les notifications non essentielles</strong>
+          <p>Passe en revue les applications installées sur ton téléphone. Désactive les notifications de toutes celles qui ne nécessitent pas une réponse immédiate.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-label">Jours 13-14</div>
+        <div class="day-content">
+          <strong>Deuxième revue hebdomadaire</strong>
+          <p>Même exercice que Jour 7. Ajoute : combien d'heures as-tu récupérées cette semaine grâce aux ajustements ? Même 30 minutes, c'est réel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Semaine 3 -->
+  <div class="week">
+    <div class="week-header"><span>Semaine 3</span> — Éliminer les failles (Jours 15-21)</div>
+    <div class="week-body">
+      <div class="day-block">
+        <div class="day-label">Jours 15-17</div>
+        <div class="day-content">
+          <strong>Identifier et réduire ta principale distraction</strong>
+          <p>Quelle est l'activité qui te vole le plus de temps sans t'apporter de valeur réelle ? Réduis-la de 50% pendant 3 jours. Pas d'élimination totale — juste une réduction progressive.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-label">Jours 18-19</div>
+        <div class="day-content">
+          <strong>Bloquer des créneaux dans ton calendrier</strong>
+          <p>Réserve des plages fixes pour tes tâches importantes, comme tu réserverais un rendez-vous médical. Ces créneaux ne se négocient pas.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-label">Jours 20-21</div>
+        <div class="day-content">
+          <strong>Terminer chaque journée par 3 victoires + revue semaine 3</strong>
+          <p>Ajoute à ta routine soir : noter 3 choses accomplies, aussi petites soient-elles. Puis la revue hebdomadaire habituelle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Semaine 4 -->
+  <div class="week">
+    <div class="week-header"><span>Semaine 4</span> — Consolider et regarder loin (Jours 22-30)</div>
+    <div class="week-body">
+      <div class="day-block">
+        <div class="day-label">Jours 22-25</div>
+        <div class="day-content">
+          <strong>Automatiser ou déléguer une tâche répétitive</strong>
+          <p>Y a-t-il quelque chose que tu fais chaque semaine et qui pourrait être automatisé (une application, un modèle de message) ou délégué ? Identifie-le et agis dessus.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-label">Jours 26-28</div>
+        <div class="day-content">
+          <strong>Mesurer ce qui a changé</strong>
+          <p>Reprends ton audit du Jour 1. Que fais-tu différemment ? Combien de temps as-tu libéré ? Qu'est-ce que tu as accompli que tu remettais à plus tard ?</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-label">Jours 29-30</div>
+        <div class="day-content">
+          <strong>Définir les 3 priorités du mois suivant</strong>
+          <p>Le cycle recommence. Mais cette fois, tu as une base : des routines installées, une habitude de revue, et une meilleure conscience de ton temps. Ces 30 jours ont changé quelque chose.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Règles de base -->
+  <div class="rules">
+    <h2>Les 5 principes qui font tenir le plan</h2>
+    <div class="rule">
+      <div class="rule-num">1</div>
+      <div class="rule-text"><strong>Une chose à la fois.</strong> Le multitâche est un mythe : chaque changement de tâche coûte environ 15 minutes de concentration. Finir une tâche avant d'en commencer une autre.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">2</div>
+      <div class="rule-text"><strong>La tâche la plus difficile en premier.</strong> L'énergie cognitive est maximale le matin. La tâche que tu redoutes le plus, tu la fais avant tout le reste.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">3</div>
+      <div class="rule-text"><strong>Ne jamais rater deux fois de suite.</strong> Manquer un jour, c'est humain. Manquer deux jours de suite, c'est le début d'un abandon. Un jour raté = recommencer dès le lendemain sans négociation.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">4</div>
+      <div class="rule-text"><strong>Le progrès sur la perfection.</strong> Ce plan n'est pas un régime. Pas besoin de tout suivre à 100%. 70% d'une bonne habitude valent mieux que 0% d'une habitude parfaite jamais commencée.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">5</div>
+      <div class="rule-text"><strong>Ce que tu mesures, tu le contrôles.</strong> La revue hebdomadaire n'est pas optionnelle. C'est le moment où tu pilotes, pas où tu subis.</div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    Ce plan est un cadre pratique de gestion du temps, pas un programme médical ou thérapeutique. Si tu traverses une période difficile, parles-en autour de toi. En France, le 3114 est disponible 24h/24 (gratuit).
+  </div>
+
+</main>
+
+<footer>
+  <p>Guide créé par <a href="https://www.youtube.com/@mindsetbrutfr" target="_blank" rel="noopener">Mindset Brut</a>
+     · <a href="../index.html">Retour à l'outil</a></p>
+</footer>
+
+</body>
+</html>
