@@ -372,7 +372,7 @@
           // succès : on cache le form et on affiche un message inline
           emailForm.style.display = "none";
           var fb = $("email-feedback");
-          fb.innerHTML = "Merci ! Tu es sur la liste.<br><a href=\"guides/plan-30-jours.html\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;margin-top:10px;font-weight:600;color:inherit;\">📖 Accède à ton plan 30 jours maintenant →</a>";
+          fb.innerHTML = "Merci ! Tu es sur la liste.<br><a href=\"guides/plan-30-jours.html\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;margin-top:10px;font-weight:600;color:inherit;\">📖 Accède à ton plan 30 jours maintenant →</a><br><a href=\"https://boutiquefred.gumroad.com/l/discipline-30\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;margin-top:10px;font-weight:700;color:inherit;\">Prêt à passer à l'action ? Discipline 30 — le système complet (28 p., tracker + bilans) → 11€</a>";
           clearTimeout(fb._t);
         } else {
           if (btn) { btn.disabled = false; }
